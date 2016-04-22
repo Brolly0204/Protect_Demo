@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hao123</title>
+    <style>
+        div, ul, li, input{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container {
+            width: 800px;
+            height: 400px;
+            margin: 100px auto;
+            text-align: center;
+            position: relative;
+        }
+        .container p {
+            font-size: 41px;
+            color: #E91E63;
+            font-weight: bolder;
+        }
+        .container > div {
+            margin: 30px 0;
+        }
+        #text {
+            height: 40px;
+            width: 536px;
+            font-size: 16px;
+            text-indent: 10px;
+            outline: none;
+        }
+        #btn {
+            width: 102px;
+            height: 44px;
+            font-size: 16px;
+            border: none;
+            background-color: #38f;
+            color: white;
+            margin-left: -8px;
+        }
+        ul {
+            width: 538px;
+            border: 1px solid #999;
+            position: absolute;
+            top: 131px;
+            left: 79px;
+            cursor: initial;
+            display: none;
+        }
+        ul li {
+            text-align: left;
+            padding-left: 10px;
+            height: 25px;
+            line-height: 25px;
+            color: #000;
+            font-size: 16px ;
+        }
+        ul li:hover {
+            background: #ccc;
+        }
+    
+    </style>
+    <script src="js/jsonp.js"></script>
+</head>
+<body>
+<div class="container">
+    <p>我的百度</p>
+    <div>
+        <input id="text" type="text">
+        <input id="btn" type="button" value="百度一下">
+    </div> 
+    <ul>
+    </ul> 
+</div>
+<script type="text/javascript">
+    window.onload = function() {
+        var text = document.getElementById('text');
+        var btn = document.getElementById('btn');
+        var oUl = document.getElementsByTagName('ul')[0];
+
+        text.onkeyup = function() {
+            oUl.style.display = "block";
+            var value = text.value; 
+            if(value) {
+                jsonp('https://gsp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', 
+                       {wd: value},
+                       'cb',
+                       function(data){
+                            var list = data.s;
+                            var fragement = document.createDocumentFragment();
+                            oUl.innerHTML = "";
+                            for(var str in list) {
+                                var li = document.createElement('li');
+                                li.innerHTML = list[str];
+                                fragement.appendChild(li);
+                            }
+                            oUl.appendChild(fragement);
+                       });
+            }else {
+                oUl.style.display = "none";
+            }
+        }
+        btn.onclick = function() {
+            var value = text.value; 
+            if(value) {
+                window.open('http://www.baidu.com/s?word=' + encodeURIComponent(value), '_blank');
+            }
+        }
+        oUl.onclick = function (e) {
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                window.open('http://www.baidu.com/s?word=' + encodeURIComponent(target.innerHTML), '_blank');
+        };
+    }
+</script>
+</body>
+</html>
