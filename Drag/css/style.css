@@ -1,0 +1,122 @@
+ul,
+li,
+div {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#content {
+    width: 350px;
+    padding: 10px;
+    border: 1px dashed #D143D3;
+    margin: 30px auto;
+    overflow: hidden;
+    white-space: nowrap; 
+    font-size: 14px;
+    background: #FBFE0F;
+}
+
+.drag_box {
+    width: 840px;
+    padding: 5px;
+    height: 480px;
+    margin: 50px auto;
+    background: #D4D4D4;
+    position: relative;
+}
+
+.drag_box li {
+    width: 200px;
+    height: 150px;
+    float: left;
+    background: blue;
+    margin: 5px;
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    cursor: move;
+    -webkit-user-select: none;
+}
+
+.drag_box  p {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+
+.drag_box div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+}
+
+.drag_box li:nth-child(1) {
+    background: red;
+}
+
+.drag_box li:nth-child(2) {
+    background: blue;
+}
+
+.drag_box li:nth-child(3) {
+    background: green;
+}
+
+.drag_box li:nth-child(4) {
+    background: yellow;
+}
+
+.drag_box li:nth-child(5) {
+    background: orange;
+}
+
+.drag_box li:nth-child(6) {
+    background: pink;
+}
+
+.drag_box li:nth-child(7) {
+    background: #CDDC39;
+}
+
+.drag_box li:nth-child(8) {
+    background: #795548;
+}
+
+.drag_box li:nth-child(9) {
+    background: #607D8B;
+}
+
+.drag_box li:nth-child(10) {
+    background: #FF5722;
+}
+
+.drag_box li:nth-child(11) {
+    background: #03A9F4;
+}
+
+.drag_box li:nth-child(12) {
+    background: #9C27B0;
+}
+
+.drag_box li:nth-child(13) {
+    background: #9C27B0;
+}
+
+.drag_box li:nth-child(14) {
+    background: #6375B7;
+}
+
+.drag_box li:nth-child(15) {
+    background: #8BB763;
+}
+
+.drag_box li:nth-child(16) {
+    background: #F44336;
+}
