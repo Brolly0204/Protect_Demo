@@ -3,7 +3,6 @@ window.onload = function() {
     var btn = document.getElementById('btn');
     var oUl = document.getElementsByTagName('ul')[0];
     text.onkeyup = function() {
-        oUl.style.display = "block";
         var value = text.value; 
         if(value) {
             jsonp('https://gsp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', 
@@ -11,6 +10,11 @@ window.onload = function() {
                    'cb',
                    function(data){
                         var list = data.s;
+                        if(list.length == 0) {
+                            oUl.style.display = "none";
+                        }else {
+                            oUl.style.display = "block";
+                        }
                         var fragement = document.createDocumentFragment();
                         oUl.innerHTML = "";
                         for(var str in list) {

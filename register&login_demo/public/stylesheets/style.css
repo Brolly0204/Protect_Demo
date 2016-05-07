@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#timer {
+	font-size: 20px;
+}
+
+.btn_exit {
+   width: 50px;
+   height: 40px;
+   font-size: 24px;
+   text-align: center;
+   line-height: 40px;
+}
